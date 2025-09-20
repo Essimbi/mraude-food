@@ -1,0 +1,301 @@
+/* Menu Section Styles */
+#menu {
+    padding: 8rem 0;
+    background-color: var(--gray);
+    position: relative;
+}
+
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.menu-tab {
+    background: none;
+    border: none;
+    padding: 1.5rem 3rem;
+    font-size: 1.6rem;
+    font-family: var(--font-title);
+    color: var(--dark-gray);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.menu-tab::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.menu-tab:hover {
+    color: var(--mraude-green);
+}
+
+.menu-tab.active {
+    color: var(--mraude-green);
+}
+
+.menu-tab.active::after {
+    transform: scaleX(1);
+}
+
+.menu-categories {
+    position: relative;
+    min-height: 400px;
+}
+
+.menu-category {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    transition: all 0.3s ease;
+    transform: translateY(20px);
+}
+
+.menu-category.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    transform: translateY(0);
+}
+
+/* Weekend Menu */
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.menu-category.active .menu-items {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Daily Menu */
+.daily-header {
+    text-align: center;
+    background: var(--mraude-green);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.daily-header h3 {
+    font-family: var(--font-title);
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+}
+
+.daily-header .daily-date {
+    font-size: 1.6rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+}
+
+.daily-header .daily-info {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.daily-header .daily-info p {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.daily-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    font-size: 1.4rem;
+    backdrop-filter: blur(5px);
+}
+
+.daily-menu {
+    display: grid;
+    gap: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.menu-category.active .daily-menu {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.daily-menu-item {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    transition: transform 0.3s ease;
+}
+
+.daily-menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-item-image {
+    height: 100%;
+    overflow: hidden;
+}
+
+.menu-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.daily-menu-item:hover .menu-item-image img {
+    transform: scale(1.1);
+}
+
+.menu-item-content {
+    padding: 2.5rem;
+}
+
+.menu-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.menu-item-header h4 {
+    font-family: var(--font-title);
+    font-size: 2.4rem;
+    color: var(--mraude-green);
+}
+
+.price-tag {
+    font-family: var(--font-title);
+    font-size: 2.4rem;
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.menu-item-description {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: var(--dark-gray);
+    margin-bottom: 2rem;
+}
+
+.menu-item-tags {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.tag.bestseller {
+    background-color: var(--gold);
+    color: white;
+}
+
+.tag.spicy {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.tag.vegetarian {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.tag.new {
+    background-color: var(--mraude-green);
+    color: white;
+}
+
+.tag i {
+    font-size: 1.2rem;
+}
+
+.daily-menu-options {
+    background: white;
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.daily-menu-options h5 {
+    font-family: var(--font-title);
+    font-size: 2rem;
+    color: var(--mraude-green);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.options-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.options-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.6rem;
+    color: var(--dark-gray);
+}
+
+.options-list li i {
+    color: var(--mraude-green);
+}
+
+@media (max-width: 1024px) {
+    .daily-menu-item {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-item-image {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .daily-header {
+        padding: 2rem;
+    }
+
+    .daily-header h3 {
+        font-size: 2.8rem;
+    }
+
+    .options-list {
+        grid-template-columns: 1fr;
+    }
+}
